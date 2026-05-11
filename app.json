@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "Notes App",
+    "slug": "notes-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#0f0f0f"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": { "supportsTablet": true },
+    "android": { "adaptiveIcon": { "backgroundColor": "#0f0f0f" } },
+    "web": { "favicon": "./assets/favicon.png" }
+  }
+}
