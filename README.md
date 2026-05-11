@@ -81,18 +81,18 @@ Scan the QR code with Expo Go to see the app on your device.
 
 ```
 NotesApp/
-├── App.js                          # Root — navigation state, theme management
-├── app.json                        # Expo configuration
+├── App.js                          
+├── app.json                        
 ├── package.json
 ├── babel.config.js
 └── src/
     ├── screens/
-    │   ├── NotesListScreen.js      # View 1 — Notes list + search + filter
-    │   └── NoteEditorScreen.js     # View 2 — Note editor + keyboard handling
+    │   ├── NotesListScreen.js      
+    │   └── NoteEditorScreen.js    
     ├── theme/
-    │   └── colors.js               # LIGHT_THEME, DARK_THEME, TYPOGRAPHY, SPACING
+    │   └── colors.js             
     └── data/
-        └── mockNotes.js            # Sample notes data + tag color palettes
+        └── mockNotes.js            
 ```
 
 ---
@@ -120,9 +120,47 @@ Two complete theme objects (`LIGHT_THEME` / `DARK_THEME`) in `colors.js` cover e
 - `StyleSheet.compose()` — combining base search input style with dynamic background
 
 ---
+## 🪝 Hooks Used
 
+| Hook | Purpose |
+|---|---|
+| `useState` | Local state — search query, active filter, pressed state, title, content, saved state |
+| `useMemo` | Memoized filtered + sorted notes list for performance |
+| `useCallback` | Memoized render functions to avoid unnecessary re-renders |
+| `useColorScheme` | Auto detects system dark/light mode preference |
+| `useWindowDimensions` | Responsive layouts for phones and tablets |
+
+---
+## 🧩 React Native Components Used
+
+| Component | Where Used |
+|---|---|
+| `FlatList` | Notes grid, filter chips list |
+| `ScrollView` | Filter chips row, editor screen |
+| `TextInput` | Search bar, note title, note body |
+| `Pressable` | Note cards, FAB, save/back buttons, filter chips |
+| `Switch` | Dark/light mode toggle |
+| `ImageBackground` | Editor screen header |
+| `KeyboardAvoidingView` | Editor screen — prevents keyboard overlap |
+| `SafeAreaView` | Both screens — safe area handling |
+| `StatusBar` | Both screens — dynamic bar style |
+| `View` | Layout containers throughout |
+| `Text` | All text rendering |
+
+---
 ## 🛠 Tech Stack
 
 - **React Native** 0.74
 - **Expo** ~51
 - No third-party UI libraries — pure React Native core components
+---
+## Screenshots
+
+<div align="center">
+  <img width="200" src="https://github.com/user-attachments/assets/e18829fb-83aa-4088-8448-89632d179dc1" />
+  <img width="200" src="https://github.com/user-attachments/assets/e53229e1-e682-49f7-aa65-c287c08d968a" />
+  <img width="200" src="https://github.com/user-attachments/assets/d6a6f641-0850-4caa-b2ad-0cb9e82b0cc5" />
+  <img width="200" src="https://github.com/user-attachments/assets/4e976637-6edf-416f-8f8a-faf155a900cf" />
+</div>
+
+---
